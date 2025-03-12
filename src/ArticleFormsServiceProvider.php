@@ -50,5 +50,9 @@ class ArticleFormsServiceProvider extends ServiceProvider
         $webTemplates = $ap["webBlockTypeTemplates"];
         $webTemplates["request_form"] = config("article-forms.webTemplate");
         app()->config["article-pages.webBlockTypeTemplates"] = $webTemplates;
+
+        $insideTitle = $ap["insideTitle"];
+        $insideTitle[] = "request_form";
+        app()->config["article-pages.insideTitle"] = $insideTitle;
     }
 }
